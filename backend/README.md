@@ -4,8 +4,8 @@
 
 * Install the following operating system dependencies
 
-    python3-virtualenv
-    sqlite3
+  * python3-virtualenv
+  * sqlite3
 
 * Change to the backend directory
 

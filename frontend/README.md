@@ -2,13 +2,17 @@
 
 ## Project Setup
 
-* Change to the frontend repo's directory
+* Install the following operating system dependencies
+
+    nodejs version 24.x.x or later
+
+* Change to the frontend directory
 
 ```sh
 cd frontend
 ```
 
-* Execute these commands when in the repo's directory
+* Execute these commands when in the directory
 
 ```sh
 npm install

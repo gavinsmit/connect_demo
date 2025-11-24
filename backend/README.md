@@ -2,16 +2,21 @@
 
 ## Project Setup
 
-* Change to the backend repo's directory
+* Install the following operating system dependencies
+
+    python3-virtualenv
+    sqlite3
+
+* Change to the backend directory
 
 ```sh
 cd backend
 ```
 
-* Execute these commands when in the repo's directory
+* Execute these commands when in the directory
 
 ```sh
-python3 -m venv venv              # or python -m venv venv
+python3 -m venv venv
 source venv/bin/activate          # or . venv/bin/activate
 pip install -r requirements.txt
 python3 app.py                    # or python app.py

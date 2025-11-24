@@ -1,0 +1,4 @@
+# Operating System and Editor specific files
+.DS_Store
+.vscode/
+*.sw?

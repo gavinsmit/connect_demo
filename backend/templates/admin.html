@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect - Messages</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-darkblue: #001d36;
+      --color-blue: #08486f;
+      --color-red: #e21a22;
+      --color-charcoal: #3c3c3d;
+      --color-background1: #fbfcff;
+      --color-background2: #e9f6ff;
+    }
+  </style>
+
+  <link rel="icon" href="{{ url_for('static', filename='globe_solid_full.svg') }}" type="image/png">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='globe_solid_full.svg') }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='globe_solid_full.svg') }}">
+
+  <style>
+    @media (max-width: 1023px) {
+      .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      table { min-width: 800px; }
+    }
+  </style>
+</head>
+<body class="bg-linear-to-b from-background1 to-background2 font-sans min-h-screen">
+  <div class="container mx-auto p-4">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+      <h1 class="text-3xl sm:text-4xl font-bold text-darkblue">Messages</h1>
+      <span class="text-xl sm:text-2xl font-semibold text-red sm:pt-2">Total: {{ total }}</span>
+    </div>
+
+    {% if rows|length == 0 %}
+      <div class="bg-white rounded-lg shadow p-12 text-center text-darkblue">
+        <p class="text-xl">No messages yet.</p>
+      </div>
+    {% else %}
+      <div class="table-container bg-white rounded-lg shadow overflow-hidden mb-8">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-blue text-white">
+            <tr>
+              <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">ID</th>
+              <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Name</th>
+              <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Email</th>
+              <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Contact Number</th>
+              <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Message</th>
+              <th class="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Submitted</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            {% for r in rows %}
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-charcoal">#{{ r['id'] }}</td>
+              <td class="px-4 py-4 whitespace-nowrap text-sm text-charcoal">{{ r['name'] }}</td>
+              <td class="px-4 py-4 text-sm">
+                <a href="mailto:{{ r['email'] }}" class="text-blue-600 hover:underline break-words">{{ r['email'] }}</a>
+              </td>
+              <td class="px-4 py-4 text-sm">
+                <a href="tel:{{ r['contact_number'] }}" class="text-blue-600 hover:underline">{{ r['contact_number'] }}</a>
+              </td>
+              <td class="px-4 py-4 text-sm text-charcoal max-w-xs">
+                <p class="">{{ r['message'] }}</p>
+              </td>
+              <td class="px-4 py-4 text-sm text-charcoal whitespace-nowrap">
+                {{ r['submitted_at'] }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="flex flex-col items-center gap-4">
+        <div class="flex items-center gap-2 flex-wrap justify-center">
+          <!-- Previous -->
+          {% if prev_page %}
+            <a href="?page={{ prev_page }}" class="px-5 py-2.5 bg-blue text-white rounded-lg hover:bg-darkblue transition">
+              ← Previous
+            </a>
+          {% else %}
+            <span class="px-5 py-2.5 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed">← Previous</span>
+          {% endif %}
+
+          <!-- Page Numbers -->
+          {% for p in range(1, total_pages + 1) %}
+            {% if p == page %}
+              <span class="px-4 py-2.5 bg-red text-white rounded-lg font-bold">{{ p }}</span>
+            {% else %}
+              <a href="?page={{ p }}" class="px-4 py-2.5 bg-gray-200 text-darkblue rounded-lg hover:bg-gray-300 transition">
+                {{ p }}
+              </a>
+            {% endif %}
+          {% endfor %}
+
+          <!-- Next -->
+          {% if next_page %}
+            <a href="?page={{ next_page }}" class="px-5 py-2.5 bg-blue text-white rounded-lg hover:bg-darkblue transition">
+              Next →
+            </a>
+          {% else %}
+            <span class="px-5 py-2.5 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed">Next →</span>
+          {% endif %}
+        </div>
+
+        <!-- Counter -->
+        <div class="text-sm text-charcoal">
+          Showing {{ ((page - 1) * 10) + 1 }} to {{ [(page * 10), total]|min }} of {{ total }} messages
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

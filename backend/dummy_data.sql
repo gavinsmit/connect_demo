@@ -1,0 +1,16 @@
+INSERT INTO messages (name, email, contact_number, message, submitted_at) VALUES
+('Thandi Mokoena', 'thandi@example.com', '+27821234567', 'I am interested in your web development services. Can we schedule a call?', '2025-11-15 09:23:11'),
+('Jaco van der Merwe', 'jaco.vdm@work.co.za', '+27761234567', 'Please send me a quote for a company website redesign.', '2025-11-15 10:45:02'),
+('Lerato Nkosi', 'lerato.nkosi@gmail.com', '+27839876543', 'Hi! Do you also do mobile apps?', '2025-11-15 14:12:33'),
+('Pieter Botha', 'pieter@bizmail.co.za', '+27715558899', 'Looking for someone to maintain our e-commerce platform.', '2025-11-16 08:30:15'),
+('Zanele Dlamini', 'zanele.d@outlook.com', '+27844556677', 'Quick question about your pricing packages.', '2025-11-16 11:11:11'),
+('Sibusiso Zungu', 'sibusiso.zungu@icloud.com', '+27789234567', 'We are a startup in Cape Town looking for a modern, responsive website with booking functionality. Can you share some portfolio examples?', '2025-11-16 13:45:22'),
+('Nadia Patel', 'nadia.patel@vodamail.co.za', '+27836541239', 'Good afternoon! We need a complete rebrand including logo, business cards and a new WordPress site. Are you available next week for a consultation?', '2025-11-16 15:20:18'),
+('Themba Nkabinde', 'themba.nkabinde@gmail.com', '+27612345678', 'Saw your work on Instagram – absolutely stunning! We run a guesthouse in Durban and need professional photos + a new booking website. Please get in touch.', '2025-11-17 09:10:45'),
+('Chloé van Wyk', 'chloe.vw@protonmail.com', '+27825551234', 'Urgent request: Our current website crashed and we lost everything. Do you offer emergency recovery and redesign services?', '2025-11-17 11:33:09'),
+('Kabelo Mthembu', 'kabelo.mthembu@outlook.com', '+27741122334', 'Looking for ongoing monthly maintenance + SEO for our online store. What are your retainer packages like?', '2025-11-17 14:02:57'),
+('Fatima Ismail', 'fatima.ismail@live.com', '+27813334445', 'We are a non-profit organization in Joburg and need a donation platform integrated into our site. Budget is limited but mission is important – can we chat?', '2025-11-18 10:18:33'),
+('Ruan de Villiers', 'ruan.devilliers@me.com', '+27698765432', 'Hey team! Need a slick portfolio site for my photography business. Love minimalist design – can you do something like that?', '2025-11-18 12:44:11'),
+('Nomvula Shabalala', 'nomvula.shabalala@mweb.co.za', '+27829998887', 'Please update our restaurant menu online and add online ordering. Also want it to look great on phones!', '2025-11-18 16:29:04'),
+('Liam Govender', 'liam.govender23@gmail.com', '+27734455667', 'Student project: Building a tech community in Pretoria. Need a clean, fast website for events and membership. Can you help a student out with a discount?', '2025-11-19 08:55:20'),
+('Dr. Aisha Khan', 'dr.aisha@medicalpractice.co.za', '+27817778889', 'We are opening a new medical practice in Sandton and require a professional, HIPAA-compliant website with online appointment booking. Looking forward to your proposal.', '2025-11-19 11:27:36');

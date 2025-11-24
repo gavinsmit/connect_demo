@@ -4,6 +4,8 @@
 
 * Install the following operating system dependencies
 
+  * python3
+  * python3-pip
   * python3-virtualenv
   * sqlite3
 

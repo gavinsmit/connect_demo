@@ -2,7 +2,13 @@
 
 ## Project Setup
 
-* You must be in the repo's directory to execute these commands
+* Change to the backend repo's directory
+
+```sh
+cd backend
+```
+
+* Execute these commands when in the repo's directory
 
 ```sh
 python3 -m venv venv              # or python -m venv venv
